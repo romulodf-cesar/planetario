@@ -1,6 +1,6 @@
-from pathlib import Path,os
+from pathlib import Path
 from dotenv import load_dotenv
-
+import os
 """
 Django settings for setup project.
 
@@ -121,6 +121,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# diretório para todos os arquivos estáticos
+STATICFILES_DIRS=[
+   os.path.join(BASE_DIR,'setup/static')    
+]
+# é o caminho absoluto para o diretório, para ele manipular todos os arquivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
